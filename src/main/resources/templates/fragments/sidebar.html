@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+    <div th:fragment="sidebar" class="sidebar">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i>
+            <span>SecureVault</span>
+        </div>
+        <nav>
+            <div class="nav-item active">
+                <i class="fas fa-home"></i> Dashboard
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-folder-open"></i> My Files
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-users"></i> Groups
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-share-alt"></i> Shared with Me
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-lock"></i> Encrypted Vault
+            </div>
+            <div class="nav-item" style="margin-top: 2rem;">
+                <i class="fas fa-cog"></i> Settings
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+    <div th:fragment="header" class="header">
+        <div class="welcome">Welcome back, <span th:text="${username}">User</span>!</div>
+        <div class="user-menu">
+            <div class="avatar" th:text="${#strings.substring(username,0,2).toUpperCase()}">US</div>
+            <form th:action="@{/logout}" method="post" style="margin:0">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

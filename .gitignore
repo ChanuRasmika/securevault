@@ -36,3 +36,14 @@ build/
 # Local env file
 .env
 *.env
+
+# Ignore environment file containing secrets
+/.env
+
+# Maven build output
+/target/
+
+# IDE files
+*.iml
+.idea/
+.vscode/

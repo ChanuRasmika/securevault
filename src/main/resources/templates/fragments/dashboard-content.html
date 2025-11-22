@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+    <div th:fragment="recent-files" class="card">
+        <div class="card-header">
+            <h3 class="card-title">Recent Files</h3>
+            <button class="btn btn-primary btn-sm">View All</button>
+        </div>
+        <div class="file-item">
+            <div class="file-info">
+                <i class="fas fa-file-pdf file-icon"></i>
+                <div>
+                    <div>Project Report.pdf</div>
+                    <small class="text-muted">Modified 2 hours ago</small>
+                </div>
+            </div>
+            <button class="btn btn-sm">Share</button>
+        </div>
+        <div class="file-item">
+            <div class="file-info">
+                <i class="fas fa-file-word file-icon"></i>
+                <div>
+                    <div>Meeting Notes.docx</div>
+                    <small class="text-muted">Modified 5 hours ago</small>
+                </div>
+            </div>
+            <button class="btn btn-sm">Share</button>
+        </div>
+        <div class="file-item">
+            <div class="file-info">
+                <i class="fas fa-file-excel file-icon"></i>
+                <div>
+                    <div>Budget 2024.xlsx</div>
+                    <small class="text-muted">Modified yesterday</small>
+                </div>
+            </div>
+            <button class="btn btn-sm">Share</button>
+        </div>
+    </div>
+
+    <div th:fragment="active-groups" class="card">
+        <div class="card-header">
+            <h3 class="card-title">Active Groups</h3>
+            <button class="btn btn-primary btn-sm">Create Group</button>
+        </div>
+        <div class="group-item">
+            <div class="group-avatar">DT</div>
+            <div>
+                <div>Development Team</div>
+                <small class="text-muted">12 members</small>
+            </div>
+        </div>
+        <div class="group-item">
+            <div class="group-avatar">MT</div>
+            <div>
+                <div>Marketing Team</div>
+                <small class="text-muted">8 members</small>
+            </div>
+        </div>
+        <div class="group-item">
+            <div class="group-avatar">EX</div>
+            <div>
+                <div>Executives</div>
+                <small class="text-muted">5 members</small>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
