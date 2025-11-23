@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments/layout :: head"><title>Secure Vault</title></head>
+<body>
+
+<!-- Sidebar -->
+<div th:replace="fragments/sidebar :: sidebar"></div>
+
+<!-- Main Content -->
+<div class="main">
+    <div th:replace="fragments/header :: header"></div>
+
+    <div class="container" style="padding:20px;">
+        <h2>My Documents</h2>
+
+        <div th:if="${#lists.isEmpty(documents)}" class="text-muted" style="padding:12px;">No documents found.</div>
+        <div th:each="doc : ${documents}" class="file-item" style="display:flex; justify-content:space-between; padding:8px; border-bottom:1px solid #eee;">
+            <div>
+                <div th:text="${doc.name}">filename</div>
+                <small class="text-muted">
+                    <span th:text="${doc.contentType}">type</span>
+                    ·
+                    <span th:text="${doc.size}">0</span> bytes
+                </small>
+            </div>
+            <div>
+                <a class="btn btn-sm" th:href="@{'/documents/' + ${doc.id} + '/download'}">Download</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+

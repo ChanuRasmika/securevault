@@ -1,28 +1,45 @@
 package com.example.securevault.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.Instant;
 
 @Entity
-@Table(name = "docs")
+@Table(name = "documents")
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Document {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "doc_id")
-    private Long docId;
-    
-    @Column(name = "user_id")
-    private Long userId;
+    private Long id;
+
+    @Column(nullable = false)
+    private String ownerId;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String contentType;
+
+    @Column(nullable = false)
+    private Long size;
+
+    @Column(nullable = false)
+    private String iv;
+
+    @Column(nullable = false)
+    private Instant createdAt = Instant.now();
 
     @Lob
-    @Column(columnDefinition = "TEXT")
-    private String document;
+    @Column(nullable = false, columnDefinition = "LONGBLOB")
+    @Basic(fetch = FetchType.LAZY)
+    private byte[] encryptedData;
 
-    public Long getDocId() { return docId; }
-    public void setDocId(Long docId) { this.docId = docId; }
-    
-    public Long getUserId() { return userId; }
-    public void setUserId(Long userId) { this.userId = userId; }
-
-    public String getDocument() { return document; }
-    public void setDocument(String document) { this.document = document; }
 }

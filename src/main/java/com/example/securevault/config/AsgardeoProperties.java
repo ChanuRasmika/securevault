@@ -1,11 +1,17 @@
 package com.example.securevault.config;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-@Configuration
+@Setter
+@Component
+@Getter
 @ConfigurationProperties(prefix = "app.asgardeo")
 public class AsgardeoProperties {
 
@@ -13,45 +19,10 @@ public class AsgardeoProperties {
     private String baseUrl;
     private String orgPath;
     private String redirectUri;
-    private List<String> usernameClaims;
-
-    public String getUserinfoUri() {
-        return userinfoUri;
-    }
-
-    public void setUserinfoUri(String userinfoUri) {
-        this.userinfoUri = userinfoUri;
-    }
-
-    public String getBaseUrl() {
-        return baseUrl;
-    }
-
-    public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
-    }
-
-    public String getOrgPath() {
-        return orgPath;
-    }
-
-    public void setOrgPath(String orgPath) {
-        this.orgPath = orgPath;
-    }
-
-    public String getRedirectUri() {
-        return redirectUri;
-    }
-
-    public void setRedirectUri(String redirectUri) {
-        this.redirectUri = redirectUri;
-    }
+    private List<String> usernameClaims = new ArrayList<>();
 
     public List<String> getUsernameClaims() {
-        return usernameClaims;
+        return usernameClaims != null ? Collections.unmodifiableList(usernameClaims) : Collections.emptyList();
     }
 
-    public void setUsernameClaims(List<String> usernameClaims) {
-        this.usernameClaims = usernameClaims;
-    }
 }
