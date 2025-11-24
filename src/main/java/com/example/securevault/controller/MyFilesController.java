@@ -23,6 +23,8 @@ public class MyFilesController {
         String userId = principal.getName();
         List<Document> docs = documentService.listMyDocuments(userId);
         model.addAttribute("documents", docs);
+        model.addAttribute("username", userId);
+        model.addAttribute("activePage", "my-files");
         return "my-files";
     }
 }
