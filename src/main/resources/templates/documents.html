@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments/layout :: head"><title>Secure Vault</title></head>
+<body>
+
+<!-- Sidebar -->
+<div th:replace="fragments/sidebar :: sidebar"></div>
+
+<!-- Main Content -->
+<div class="main">
+    <div th:replace="fragments/header :: header"></div>
+
+    <div class="container" style="padding:20px;">
+        <h2>My Documents</h2>
+
+        <div th:replace="fragments/documents-list :: documentsList"></div>
+
+    </div>
+</div>
+
+</body>
+</html>

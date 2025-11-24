@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+      lang="en">
+<head th:replace="fragments/layout :: head"></head>
+<body>
+
+<!-- Sidebar -->
+<div th:replace="fragments/sidebar :: sidebar"></div>
+
+<!-- Main Content -->
+<div class="main">
+    <div th:replace="fragments/header :: header"></div>
+
+    <!-- Stats -->
+    <div th:replace="fragments/stats :: stats"></div>
+
+    <!-- Dashboard Grid -->
+    <div class="dashboard-grid">
+        <!-- Recent Files -->
+        <div th:replace="fragments/dashboard-content :: recent-files"></div>
+        
+        <!-- Active Groups -->
+        <div th:replace="fragments/dashboard-content :: active-groups"></div>
+    </div>
+</div>
+
+</body>
+</html>

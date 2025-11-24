@@ -19,6 +19,7 @@ target/
 *.iml
 *.ipr
 
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -30,4 +31,19 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
+.vscode/
+
+# Local env file
+.env
+*.env
+
+# Ignore environment file containing secrets
+/.env
+
+# Maven build output
+/target/
+
+# IDE files
+*.iml
+.idea/
 .vscode/

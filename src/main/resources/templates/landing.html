@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SecureVault - Secure File Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/landing.css}"/>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>SecureVault</span>
+            </div>
+            <h1>Secure File Management Made Simple</h1>
+            <p>Store, share, and manage your files with enterprise-grade security and seamless collaboration.</p>
+            <a th:href="@{/oauth2/authorization/asgardeo}" class="btn btn-primary">
+                <i class="fas fa-sign-in-alt"></i>
+                Login to SecureVault
+            </a>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-lock"></i>
+                <h3>End-to-End Encryption</h3>
+                <p>Your files are protected with encryption</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-users"></i>
+                <h3>Team Collaboration</h3>
+                <p>Share and collaborate with your team securely</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-cloud"></i>
+                <h3>Cloud Storage</h3>
+                <p>Access your files anywhere, anytime</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
